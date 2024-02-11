@@ -20,6 +20,9 @@ function Home() {
     catch (error) {
       console.log("Lo aagya error!");
       setPosts([]);
+      const result = await fetch(API_URL);
+      const data = await result.json();
+      setPosts(data);
     }
     setLoading(false);
   }
